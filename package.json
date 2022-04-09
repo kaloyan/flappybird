@@ -1,0 +1,16 @@
+{
+  "name": "flappybird",
+  "version": "1.0.0",
+  "description": "Flappybird Game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "game",
+    "flappybird",
+    "javascript"
+  ],
+  "author": "Kaloyan Ivanov",
+  "license": "ISC"
+}
