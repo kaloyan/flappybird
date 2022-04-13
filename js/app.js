@@ -1,4 +1,5 @@
 import { updateBird, setupBird, getBirdRect } from "./bird.js";
+import { updatePipes, setupPipes, getPassedPipeCount } from "./pipe.js";
 
 document.addEventListener("keypress", handleStart, { once: true });
 
@@ -12,6 +13,8 @@ function handleStart() {
   subtitle.classList.add("hide");
 
   setupBird();
+  setupPipes();
+
   lastTime = null;
   window.requestAnimationFrame(updateLoop);
 }
@@ -20,7 +23,7 @@ function handleLose() {
   setTimeout(() => {
     title.classList.remove("hide");
     subtitle.classList.remove("hide");
-    subtitle.textContent = "0 Pipes";
+    subtitle.textContent = `passed ${getPassedPipeCount()} pipes`;
 
     document.addEventListener("keypress", handleStart, { once: true });
   }, 100);
@@ -36,6 +39,8 @@ function updateLoop(time) {
   const delta = time - lastTime;
 
   updateBird(delta);
+  updatePipes(delta);
+
   if (checkLose()) return handleLose();
 
   lastTime = time;
