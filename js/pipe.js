@@ -36,6 +36,13 @@ function createPipe() {
       pipes = pipes.filter((p) => p !== pipe);
       pipeElement.remove();
     },
+
+    rects() {
+      return [
+        topSegment.getBoundingClientRect(),
+        bottomSegment.getBoundingClientRect(),
+      ];
+    },
   };
 
   pipe.left = window.innerWidth;
@@ -85,4 +92,8 @@ export function setupPipes() {
 
 export function getPassedPipeCount() {
   return passedPipeCount;
+}
+
+export function getPipeRects() {
+  return pipes.flatMap((pipe) => pipe.rects());
 }
