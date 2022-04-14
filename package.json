@@ -4,7 +4,7 @@
   "description": "Flappybird Game",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "lite-server"
   },
   "keywords": [
     "game",
@@ -12,5 +12,8 @@
     "javascript"
   ],
   "author": "Kaloyan Ivanov",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
 }
